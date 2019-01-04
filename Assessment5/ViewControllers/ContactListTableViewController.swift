@@ -9,7 +9,7 @@
 import UIKit
 
 class ContactListTableViewController: UITableViewController {
-
+    
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ContactListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ContactController.shared.contacts.count

@@ -14,7 +14,7 @@ class Contact {
     var name: String
     var phoneNumber: Int?
     var email: String?
-
+    
     // CloudKit
     let ckRecordId: CKRecord.ID
     

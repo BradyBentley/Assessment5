@@ -55,11 +55,3 @@ class ContactDetailViewController: UIViewController {
         emailTextField.text = contact.email
     }
 }
-
-extension String{
-    var numberValue: NSNumber?{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .none
-        return formatter.number(from: self)
-    }
-}
