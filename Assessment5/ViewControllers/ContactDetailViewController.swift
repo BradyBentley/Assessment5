@@ -26,8 +26,8 @@ class ContactDetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty,
-            let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
-            let email = emailTextField.text, !email.isEmpty else { return }
+            let phoneNumber = phoneNumberTextField.text,
+            let email = emailTextField.text else { return }
         if let contact = contact {
             ContactController.shared.updateContact(contact: contact, name: name, phoneNumber: Int(phoneNumber) ?? 0, email: email) { (success) in
                 if success {
@@ -49,9 +49,17 @@ class ContactDetailViewController: UIViewController {
     
     // MARK: - Set up
     func updateViews(){
-        guard let contact = contact else { return }
+        guard let contact = contact, let phoneNumber = contact.phoneNumber else { return }
         nameTextField.text = contact.name
-        phoneNumberTextField.text = "\(contact.phoneNumber)"
+        phoneNumberTextField.text = "\(phoneNumber)"
         emailTextField.text = contact.email
+    }
+}
+
+extension String{
+    var numberValue: NSNumber?{
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .none
+        return formatter.number(from: self)
     }
 }

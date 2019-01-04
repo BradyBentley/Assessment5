@@ -16,11 +16,8 @@ class ContactListTableViewController: UITableViewController {
         ContactController.shared.fetchAllContacts { (success) in
             if success {
                 DispatchQueue.main.async {
-                    print(">>>>>>>success")
                     self.tableView.reloadData()
                 }
-            } else {
-                print(">>>>>something when wrong")
             }
         }
     }
@@ -56,7 +53,6 @@ class ContactListTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //IIDOO
         if segue.identifier == "ToContactDetail"{
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let destinationVC = segue.destination as? ContactDetailViewController
