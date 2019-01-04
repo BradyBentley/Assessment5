@@ -8,20 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		26602EB621DFBBC100FBECB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602EB521DFBBC100FBECB1 /* AppDelegate.swift */; };
-		26602EB821DFBBC100FBECB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602EB721DFBBC100FBECB1 /* ViewController.swift */; };
 		26602EBB21DFBBC100FBECB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26602EB921DFBBC100FBECB1 /* Main.storyboard */; };
 		26602EBD21DFBBC200FBECB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26602EBC21DFBBC200FBECB1 /* Assets.xcassets */; };
 		26602EC021DFBBC200FBECB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26602EBE21DFBBC200FBECB1 /* LaunchScreen.storyboard */; };
+		26602ECB21DFBC6700FBECB1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26602ECA21DFBC6700FBECB1 /* CloudKit.framework */; };
+		26602ECD21DFBF2C00FBECB1 /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602ECC21DFBF2C00FBECB1 /* ContactListTableViewController.swift */; };
+		26602ED221DFC0EF00FBECB1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602ED121DFC0EF00FBECB1 /* Contact.swift */; };
+		26602ED421DFC0FD00FBECB1 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602ED321DFC0FD00FBECB1 /* ContactController.swift */; };
+		26602ED821DFD65B00FBECB1 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26602ED721DFD65B00FBECB1 /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26602EB221DFBBC100FBECB1 /* Assessment5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assessment5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26602EB521DFBBC100FBECB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26602EB721DFBBC100FBECB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26602EBA21DFBBC100FBECB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26602EBC21DFBBC200FBECB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26602EBF21DFBBC200FBECB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26602EC121DFBBC200FBECB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26602EC821DFBC6300FBECB1 /* Assessment5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assessment5.entitlements; sourceTree = "<group>"; };
+		26602ECA21DFBC6700FBECB1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		26602ECC21DFBF2C00FBECB1 /* ContactListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
+		26602ED121DFC0EF00FBECB1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		26602ED321DFC0FD00FBECB1 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		26602ED721DFD65B00FBECB1 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26602ECB21DFBC6700FBECB1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,7 @@
 			children = (
 				26602EB421DFBBC100FBECB1 /* Assessment5 */,
 				26602EB321DFBBC100FBECB1 /* Products */,
+				26602EC921DFBC6700FBECB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,58 @@
 		26602EB421DFBBC100FBECB1 /* Assessment5 */ = {
 			isa = PBXGroup;
 			children = (
+				26602EC821DFBC6300FBECB1 /* Assessment5.entitlements */,
+				26602EC721DFBBEC00FBECB1 /* Resources */,
+				26602ED021DFBF4300FBECB1 /* ViewControllers */,
+				26602ED521DFC10100FBECB1 /* Model */,
+				26602ED621DFC10800FBECB1 /* ModelController */,
+			);
+			path = Assessment5;
+			sourceTree = "<group>";
+		};
+		26602EC721DFBBEC00FBECB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				26602EB521DFBBC100FBECB1 /* AppDelegate.swift */,
-				26602EB721DFBBC100FBECB1 /* ViewController.swift */,
 				26602EB921DFBBC100FBECB1 /* Main.storyboard */,
 				26602EBC21DFBBC200FBECB1 /* Assets.xcassets */,
 				26602EBE21DFBBC200FBECB1 /* LaunchScreen.storyboard */,
 				26602EC121DFBBC200FBECB1 /* Info.plist */,
 			);
-			path = Assessment5;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		26602EC921DFBC6700FBECB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26602ECA21DFBC6700FBECB1 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26602ED021DFBF4300FBECB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26602ECC21DFBF2C00FBECB1 /* ContactListTableViewController.swift */,
+				26602ED721DFD65B00FBECB1 /* ContactDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26602ED521DFC10100FBECB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26602ED121DFC0EF00FBECB1 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26602ED621DFC10800FBECB1 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				26602ED321DFC0FD00FBECB1 /* ContactController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +151,14 @@
 				TargetAttributes = {
 					26602EB121DFBBC100FBECB1 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26602EB821DFBBC100FBECB1 /* ViewController.swift in Sources */,
+				26602ED221DFC0EF00FBECB1 /* Contact.swift in Sources */,
+				26602ED421DFC0FD00FBECB1 /* ContactController.swift in Sources */,
+				26602ECD21DFBF2C00FBECB1 /* ContactListTableViewController.swift in Sources */,
+				26602ED821DFD65B00FBECB1 /* ContactDetailViewController.swift in Sources */,
 				26602EB621DFBBC100FBECB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +348,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Assessment5/Assessment5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D7Q6ZCPJ6Q;
-				INFOPLIST_FILE = Assessment5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Assessment5/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +367,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Assessment5/Assessment5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D7Q6ZCPJ6Q;
-				INFOPLIST_FILE = Assessment5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Assessment5/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

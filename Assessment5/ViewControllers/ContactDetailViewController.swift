@@ -9,22 +9,49 @@
 import UIKit
 
 class ContactDetailViewController: UIViewController {
-
+    // MARK: - IBOutlets
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    // MARK: - Properties
+    var contact: Contact?
+    
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let name = nameTextField.text, !name.isEmpty,
+            let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
+            let email = emailTextField.text, !email.isEmpty else { return }
+        if let contact = contact {
+            ContactController.shared.updateContact(contact: contact, name: name, phoneNumber: Int(phoneNumber) ?? 0, email: email) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+        } else {
+            ContactController.shared.createContactWith(name: name, phoneNumber: Int(phoneNumber) ?? 0, email: email) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+        }
     }
-    */
-
+    
+    // MARK: - Set up
+    func updateViews(){
+        guard let contact = contact else { return }
+        nameTextField.text = contact.name
+        phoneNumberTextField.text = "\(contact.phoneNumber)"
+        emailTextField.text = contact.email
+    }
 }
